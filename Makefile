@@ -4,7 +4,9 @@ CC	=	gcc
 
 CFLAGS	=	-W -Wall -Wextra -Iinclude -Ilibs/raylib
 
-LDFLAGS	=	-L./libs/raylib -lraylib
+LDFLAGS	=	-L./libs/raylib -lraylib \
+		-framework CoreVideo -framework IOKit \
+		-framework GLUT -framework OpenGL -framework Cocoa
 
 SRCS	=	$(wildcard srcs/*.c)
 
