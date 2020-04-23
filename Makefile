@@ -1,16 +1,14 @@
 NAME	=	piboy
 
-CC	=	gcc
+CC	=	g++
 
-CFLAGS	=	-W -Wall -Wextra -Iinclude -Ilibs/raylib
+CXXFLAGS=	-W -Wall -Wextra -Iinclude -I./libs/raylib -I./libs -std=c++17 -I/usr/include/lua5.3 -g
 
-LDFLAGS	=	-L./libs/raylib -lraylib \
-		-framework CoreVideo -framework IOKit \
-		-framework GLUT -framework OpenGL -framework Cocoa
+LDFLAGS	=	-L./libs/raylib -lraylib -lX11 -ldl -lpthread -lm -lwiringPi -llua5.3 -lstdc++fs
 
-SRCS	=	$(wildcard srcs/*.c)
+SRCS	=	$(wildcard srcs/*.cpp)
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS	=	$(SRCS:.cpp=.o)
 
 all:		$(NAME)
 

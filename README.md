@@ -1,3 +1,0 @@
-# PiBoy
-
-Second year project
